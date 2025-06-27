@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333; /* Dark background for dungeon feel */
+}
+
+#game-container {
+    position: relative;
+    width: 100%; /* Take full width of the browser */
+    height: 600px; /* Fixed height for the game window */
+    max-width: 1200px; /* Max width to control aspect ratio */
+    border: 2px solid #555;
+    background-color: #000; /* Dungeon black */
+    overflow: hidden; /* Crucial for character movement within bounds */
+}
+
+/* Position SVGs absolutely within the game container */
+#background-svg,
+#tile-set-svg,
+#main-character-svg,
+#ui-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#tile-set-svg {
+    /* Adjust height to fit the lower part of the screen */
+    height: 100px; /* Example height for tiles */
+    top: auto;
+    bottom: 0;
+}
+
+#main-character-svg {
+    /* Character will be spawned dynamically by JS, but this is its initial size */
+    width: 50px;
+    height: 100px;
+    /* Remove 'bottom: 0;' and 'left: 0;' here */
+    z-index: 10; /* Make sure character is above tiles */
+    /* transform will be handled by JS */
+}
+
+/* Basic Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #222;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#loot-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+    border: 1px solid gold;
+    padding: 10px;
+}
+
+.loot-item {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+    color: gold;
+    font-size: 0.9em;
+    border: 1px solid #666;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
