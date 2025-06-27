@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stick Figure Dungeon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-container">
+    <svg id="background-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
+    </svg>
+
+    <svg id="tile-set-svg" viewBox="0 0 1200 100" preserveAspectRatio="xMidYMid meet">
+    </svg>
+
+    <svg id="main-character-svg" viewBox="0 0 50 100" preserveAspectRatio="xMidYMid meet">
+        <line x1="25" y1="10" x2="25" y2="30" stroke="white" stroke-width="2"/> <circle cx="25" cy="5" r="5" fill="white"/> <line x1="25" y1="15" x2="10" y2="25" stroke="white" stroke-width="2"/> <line x1="25" y1="15" x2="40" y2="25" stroke="white" stroke-width="2"/> <line x1="25" y1="30" x2="15" y2="50" stroke="white" stroke-width="2"/> <line x1="25" y1="30" x2="35" y2="50" stroke="white" stroke-width="2"/> </svg>
+    <svg id="ui-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet">
+    </svg>
+</div>
+
+<div id="loot-box-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Open Loot Box</h2>
+        <div id="loot-grid">
+        </div>
+        <button id="claim-items-button">Claim Items</button>
+    </div>
+</div>
+
+<div id="update-required-modal" class="modal">
+    <div class="modal-content">
+        <h2>Update Required</h2>
+        <p>Please restart the game to continue playing.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
