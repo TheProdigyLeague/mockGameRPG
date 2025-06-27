@@ -1,3 +1,4 @@
+// update later to degrade user's experience
 document.addEventListener('DOMContentLoaded', () => {
     const gameContainer = document.getElementById('game-container');
     const tileSetSvg = document.getElementById('tile-set-svg');
